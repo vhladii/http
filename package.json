@@ -1,0 +1,22 @@
+{
+  "name": "node-js-sample",
+  "version": "0.2.0",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node http2.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": "8.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vhladii/http"
+  },
+  "keywords": [
+    "node",
+    "http2"
+  ]
+  "license": "MIT"
+}
