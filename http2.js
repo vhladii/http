@@ -1,15 +1,28 @@
 const http2 = require('http2');
 
 // Create a plain-text HTTP/2 server
-const server = http2.createServer();
 
-server.on('stream', (stream, headers) => {
-  stream.respond({
-    'content-type': 'text/html',
-    ':status': 200
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+
+const app = express();
+const server = http2.createServer(null,app);
+
+app.get('/', (req, res) => {
+    res
+      .status(200)
+      .json({message: 'ok'})
+})
+
+server.on('error', (err) => console.error(err));
+server.on('socketError', (err) => console.error(err));
+
+server.listen(process.env.PORT, (error) => {
+    if (error) {
+      console.error(error)
+      return process.exit(1)
+    } else {
+      console.log('Listening on port: ' + port + '.')
+    }
   });
-  stream.end('<h1>Hello World</h1>');
-});
-
-server.listen(process.env.PORT);
-console.log("server stay at $process.env.PORT port");

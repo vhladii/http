@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node http2.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.14.0"
+  },
   "engines": {
     "node": "8.9.3"
   },
