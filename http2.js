@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const server = http2.createServer(null,app);
+const server = http2.createServer({},app);
 
 app.get('/', (req, res) => {
     res
