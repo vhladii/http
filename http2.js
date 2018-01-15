@@ -11,5 +11,5 @@ server.on('stream', (stream, headers) => {
   stream.end('<h1>Hello World</h1>');
 });
 
-server.listen(8000);
-console.log("server stay at 8000 port");
+server.listen(process.env.PORT);
+console.log("server stay at $process.env.PORT port");
